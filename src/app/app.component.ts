@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Ejercicios';
+  title: string= 'Ejercicios';
+  contador: number = 10;
+
+  incrementar(N: number): void {
+    this.contador += N;
+  }
+  decrementar(N: number): void {
+    this.contador -= N;
+  }
+  reset(): void {
+    this.contador = 10;
+  }
 }
