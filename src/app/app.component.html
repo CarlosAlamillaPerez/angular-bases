@@ -1,9 +1,8 @@
 <h1>{{ title }} </h1>
 <hr>
-<h3>Contador: {{ contador }}</h3>
-<button (click)="incrementar(1)">+1</button>
-<button (click)="reset()">reset</button>
-<button (click)="decrementar(1)">-1</button>
-
-<app-heroes-heroe></app-heroes-heroe>
-<app-heroes-lista></app-heroes-lista>
+<app-contador></app-contador>
+<hr>
+<div class="row">
+    <app-heroes-heroe class="col"></app-heroes-heroe>
+    <app-heroes-lista class="col"></app-heroes-lista>
+</div>
