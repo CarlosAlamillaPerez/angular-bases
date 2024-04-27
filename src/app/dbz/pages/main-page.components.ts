@@ -18,4 +18,8 @@ export class DbzMainPageComponent  {
             poder: 9500
         }
     ]
+
+    recibir_NewPersonaje(newpersonaje: Personaje):void{
+        this.personaje.push(newpersonaje)
+    } 
 }

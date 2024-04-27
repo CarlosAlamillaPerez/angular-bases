@@ -11,8 +11,8 @@ export class ListaPersonajesComponent {
   @Input()
   public ListaPersonajes: Personaje[] = [
     {
-      nombre: 'Trunks',
-      poder: 10,
+      nombre: '',
+      poder: 0,
     },
   ];
 }
