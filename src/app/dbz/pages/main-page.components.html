@@ -2,10 +2,10 @@
 
 <div class="row">
     <div class="col">
-        <dbz-lista-personajes [ListaPersonajes]="personaje"></dbz-lista-personajes>
+        <dbz-lista-personajes [List_Personajes]="ObjPersonaje" (set_DeletePersonaje)="get_DeletePersonaje($event)"></dbz-lista-personajes>
     </div>
     
     <div class="col">
-        <dbz-add-personaje (emit_NewPersonaje)="recibir_NewPersonaje($event)"></dbz-add-personaje>
+        <dbz-add-personaje (set_AddPersonaje)="get_AddPersonaje($event)"></dbz-add-personaje>
     </div>
 </div>

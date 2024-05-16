@@ -1,14 +1,16 @@
 <h4>Lista de Personajes</h4>
 <ul class="list-group">
     <li
-        *ngFor="let personaje of ListaPersonajes; index as i"
-        class="list-group-item d-flex justify-content-lg-between align-items-center "
+        *ngFor="let obj_personaje of List_Personajes; index as i"
+        class="list-group-item d-flex justify-content-between align-items-center "
     >
         <div>
-            {{ i+1 }}.
-            <b>{{personaje.nombre}}</b>
-            = Poder: {{ personaje.poder }}
+            {{ i +1 }}.
+            <b>{{obj_personaje.nombre}}</b>
+            = Poder: {{ obj_personaje.poder }}
         </div>
-        <button class="btn btn-danger ">X</button>
+        <button class="btn btn-danger " (click)="emit_DeletePersonaje(obj_personaje.id!)">
+            X
+        </button>
     </li>
 </ul>

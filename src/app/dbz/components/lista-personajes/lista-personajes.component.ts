@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Personaje } from '../../interfaces/personaje.interface';
+import { v4 as _id} from 'uuid'
 
 @Component({
   selector: 'dbz-lista-personajes',
@@ -9,10 +10,18 @@ import { Personaje } from '../../interfaces/personaje.interface';
 export class ListaPersonajesComponent {
 
   @Input()
-  public ListaPersonajes: Personaje[] = [
+  public List_Personajes: Personaje[] = [
     {
+      id: _id(),
       nombre: '',
       poder: 0,
     },
   ];
+
+  @Output()
+  public set_DeletePersonaje:EventEmitter<string> = new EventEmitter();
+
+  emit_DeletePersonaje(id_personaje: string):void{
+    this.set_DeletePersonaje.emit(id_personaje)
+  }
 }

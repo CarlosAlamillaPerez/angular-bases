@@ -1,5 +1,6 @@
 import { Personaje } from './../../interfaces/personaje.interface';
 import { Component, EventEmitter, Output, output } from '@angular/core';
+import { v4 as _id} from 'uuid'
 
 @Component({
   selector: 'dbz-add-personaje',
@@ -9,18 +10,19 @@ import { Component, EventEmitter, Output, output } from '@angular/core';
 export class AddPersonajeComponent {
 
   public personaje: Personaje = {
+    id: _id(),
     nombre: '',
     poder: 0
   }
 
   @Output()
-  public emit_NewPersonaje:EventEmitter<Personaje> = new EventEmitter();
+  public set_AddPersonaje:EventEmitter<Personaje> = new EventEmitter();
 
-  public emit_form():void{
-    console.log(this.personaje)
+  public emit_AddPersonaje():void{
     if ( this.personaje.nombre.length === 0) return;
 
-    this.emit_NewPersonaje.emit(this.personaje)
-    this.personaje = {nombre: "", poder: 0}
+    this.set_AddPersonaje.emit(this.personaje)
+
+    this.personaje = {id: _id(),nombre: "", poder: 0}
   }
 }
